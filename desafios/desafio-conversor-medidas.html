@@ -46,14 +46,14 @@
     </div>
     <script>
         function converter() {
-            let dis = Number(prompt('Digite uma distância em metros (m)'))
-            met.innerHTML = `<h2>A distância de ${dis} metros, corresponde a...</h2>`
-            km.innerHTML = `<p>${dis/1000} quilômetros (Km)`
-            hm.innerHTML = `<p>${dis/100} hectômetros (Hm)`
-            dam.innerHTML = `<p>${dis/10} decâmetros (Dam)`
-            dm.innerHTML = `<p>${dis*10} decímetros (dm)`
-            cm.innerHTML = `<p>${dis*100} centímetros (cm)`
-            mm.innerHTML = `<p>${dis*1000} milímetros (mm)`
+            let dis = prompt('Digite uma distância em metros (m)')
+            met.innerHTML = `<h2>A distância de ${dis} metros, corresponde a...</h2>`.replace('.',',')
+            km.innerHTML = `<p>${dis/1000} quilômetros (Km)`.replace('.',',')
+            hm.innerHTML = `<p>${dis/100} hectômetros (Hm)`.replace('.',',')
+            dam.innerHTML = `<p>${dis/10} decâmetros (Dam)`.replace('.',',')
+            dm.innerHTML = `<p>${dis*10} decímetros (dm)`.replace('.',',')
+            cm.innerHTML = `<p>${dis*100} centímetros (cm)`.replace('.',',')
+            mm.innerHTML = `<p>${dis*1000} milímetros (mm)`.replace('.',',')
         }
     </script>
 </body>
