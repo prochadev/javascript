@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            width: 120px;
+            height: 70px;
+            font-size: medium;
+        }
+
+        #met, h2 {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p id="met">Clique no botão acima para iniciar.</p>
+    <div id="km">
+
+    </div>
+    <div id="hm">
+
+    </div>
+    <div id="dam">
+
+    </div>
+    <div id="dm">
+
+    </div>
+    <div id="cm">
+
+    </div>
+    <div id="mm">
+
+    </div>
+    <script>
+        function converter() {
+            let dis = Number(prompt('Digite uma distância em metros (m)'))
+            met.innerHTML = `<h2>A distância de ${dis} metros, corresponde a...</h2>`
+            km.innerHTML = `<p>${dis/1000} quilômetros (Km)`
+            hm.innerHTML = `<p>${dis/100} hectômetros (Hm)`
+            dam.innerHTML = `<p>${dis/10} decâmetros (Dam)`
+            dm.innerHTML = `<p>${dis*10} decímetros (dm)`
+            cm.innerHTML = `<p>${dis*100} centímetros (cm)`
+            mm.innerHTML = `<p>${dis*1000} milímetros (mm)`
+        }
+    </script>
+</body>
+</html>
