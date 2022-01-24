@@ -6,14 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor monetário</title>
     <style>
-
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            width: 120px;
+            height: 70px;
+            font-size: medium;
+        }
     </style>
 </head>
 <body>
-    <h1>Conversor Monetário</h1>
-        
+    <h1>Conversor R$ &rarr; US$</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p id="resultado">Clique no botão acima para iniciar.</p>   
     <script>
         let cot = prompt('Antes de mais nada, quanto está a cotação do dólar agora?')
+
+        function converter() {
+            let din = prompt('Quantos R$ você tem na carteira?')
+            let carteira = din.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            let res = (carteira / cot)
+            let dolares = res.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+            resultado.innerHTML = `<h2>Com R$ ${din}, você pode comprar US ${dolares}.</h2>`.replace('.',',')
+            }
+        
     </script>
 </body>
 </html>
