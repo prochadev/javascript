@@ -14,20 +14,35 @@
             height: 60px;
             font-size: medium;
         }
+        b {
+            background-color: lightgreen;
+            color: rgb(14, 112, 14);
+        }
+        strong {
+            background-color: rgb(231, 121, 121);
+            color: rgba(5, 1, 1, 0.438);
+        }
     </style>
 </head>
 <body>
     <h1>Ano Bissexto</h1>
     <input type="button" value="Verificar" onclick="verificar()">
     <p id="msg">Informe um ano para saber se ele é bissexto</p>
-    <div id="res"></div>
+    <div id="res" class="res2"></div>
     <script>
         function verificar() {
             let ano = prompt('Qual é o ano?')
 
             msg.innerHTML = `<h2>Analisando o ano de ${ano}...</h2>`
 
-            res.innerHTML = `<p>O ano de ${ano} NÃO É BISSEXTO &#10060;</p>`
+            if (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0) {
+
+                res.innerHTML = `<p>O ano de ${ano} <b>É BISSEXTO</b> &#9989;</p>`
+
+            } else {
+
+                res.innerHTML = `<p>O ano de ${ano} <strong>NÃO É BISSEXTO</strong> &#10060;</p>`
+            }
         }
     </script>
 </body>
