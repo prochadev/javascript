@@ -26,20 +26,19 @@
     <script>
         function reajustar() {
             let nome = prompt('Qual é o nome do funcionário?')
-            let salario = prompt(`Qual é o salário de ${nome}?`)
-            let porcent = prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
+            let salario = Number(prompt(`Qual é o salário de ${nome}?`))
+            let porcent = Number(prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
 
-            let s = salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-            let p = (porcent / 100)
+            let p = (porcent * salario / 100)
 
-            let novosal = (s + p).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-            let plus = (novosal - s).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+            let novosal = parseFloat(salario + p).toFixed(2)
+            let plus = parseFloat(novosal - salario).toFixed(2)
 
             msg.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`
             
-            res1.innerHTML = `<p>O salário atual é ${s}.</p>`
-            res2.innerHTML = `<p>Com um aumento de ${porcent}%, o salário vai aumentar ${plus} no próximo mês.</p>`
-            res3.innerHTML = `<p>E a partir daí, ${nome} vai passar a ganhar ${novosal}.</p>`
+            res1.innerHTML = `<p>O salário atual é R$ ${salario.toFixed(2)}.</p>`.replace('.',',')
+            res2.innerHTML = `<p>Com um aumento de ${porcent}%, o salário vai aumentar R$ ${plus} no próximo mês.</p>`.replace('.',',')
+            res3.innerHTML = `<p>E a partir daí, ${nome} vai passar a ganhar R$ ${novosal}.</p>`.replace('.',',')
         }
     </script>
 </body>
