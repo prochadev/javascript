@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação do Estudante</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input {
+            width: 160px;
+            height: 60px;
+            font-size: medium
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Consultar as notas" onclick="consultar()">
+    <p id="msg">Clique no botão acima para informar as notas do aluno.</p>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <script>
+        function consultar() {
+            let aluno = prompt('Qual é o nome do aluno?')
+            let nota1 = parseFloat(prompt(`Primeira nota de ${aluno}:`))
+            let nota2 = parseFloat(prompt(`Segunda nota de ${aluno}:`))
+
+            let media = parseFloat((nota1 + nota2) / 2 )
+
+            msg.innerHTML = `<h2>Analisando a situação de ${aluno}...</h2>`
+
+            if(media < 3) {
+
+                res1.innerHTML = `<p>Com as notas ${nota1.toFixed(2)} e ${nota2.toFixed(2)}, a média é ${media.toFixed(2)}.</p>`.replace('.',',').replace('.',',').replace('.',',')
+                res2.innerHTML = `<p>O aluno está <b>REPROVADO</b>.</p>`
+
+            }
+
+            if(media >= 3 && media < 6) {
+
+                res1.innerHTML = `<p>Com as notas ${nota1.toFixed(2)} e ${nota2.toFixed(2)}, a média é ${media.toFixed(2)}.</p>`.replace('.',',').replace('.',',').replace('.',',')
+                res2.innerHTML = `<p>O aluno está em <b>RECUPERAÇÃO</b>.</p>`
+
+            }
+
+            if(media >= 6) {
+
+                res1.innerHTML = `<p>Com as notas ${nota1.toFixed(2)} e ${nota2.toFixed(2)}, a média é ${media.toFixed(2)}.</p>`.replace('.',',').replace('.',',').replace('.',',')
+                res2.innerHTML = `<p>O aluno está <b>APROVADO</b>.</p>`
+
+            }
+
+        }
+    </script>
+</body>
+</html>
