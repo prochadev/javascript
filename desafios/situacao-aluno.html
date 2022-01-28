@@ -14,6 +14,19 @@
             height: 60px;
             font-size: medium
         }
+        b {
+            color: darkred;
+            background-color: lightcoral;
+        }
+        span {
+            color: darkorange;
+            background-color: rgb(224, 191, 153);
+            font-weight: bolder;
+        }
+        strong {
+            color: darkgreen;
+            background-color: lightgreen;
+        }
     </style>
 </head>
 <body>
@@ -35,21 +48,21 @@
             if(media < 3) {
 
                 res1.innerHTML = `<p>Com as notas ${nota1.toFixed(2)} e ${nota2.toFixed(2)}, a média é ${media.toFixed(2)}.</p>`.replace('.',',').replace('.',',').replace('.',',')
-                res2.innerHTML = `<p>O aluno está <b>REPROVADO</b>.</p>`
+                res2.innerHTML = `<p>O aluno está <b>REPROVADO</b></p>`
 
             }
 
             if(media >= 3 && media < 6) {
 
                 res1.innerHTML = `<p>Com as notas ${nota1.toFixed(2)} e ${nota2.toFixed(2)}, a média é ${media.toFixed(2)}.</p>`.replace('.',',').replace('.',',').replace('.',',')
-                res2.innerHTML = `<p>O aluno está em <b>RECUPERAÇÃO</b>.</p>`
+                res2.innerHTML = `<p>O aluno está em <span>RECUPERAÇÃO<span></p>`
 
             }
 
             if(media >= 6) {
 
                 res1.innerHTML = `<p>Com as notas ${nota1.toFixed(2)} e ${nota2.toFixed(2)}, a média é ${media.toFixed(2)}.</p>`.replace('.',',').replace('.',',').replace('.',',')
-                res2.innerHTML = `<p>O aluno está <b>APROVADO</b>.</p>`
+                res2.innerHTML = `<p>O aluno está <strong>APROVADO</strong></p>`
 
             }
 
